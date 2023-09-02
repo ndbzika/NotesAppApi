@@ -10,11 +10,12 @@ import { loguinRequired } from '../middlewares/loginRequired';
 
 const router = Router();
 
+router.post('/signup', store);
+
 router.use(loguinRequired);
 
 router.get('/', index);
 router.get('/:id', show);
-router.post('/', store);
 router.put('/:id', update);
 router.delete('/:id', destroy);
 
