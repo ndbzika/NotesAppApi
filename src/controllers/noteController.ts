@@ -27,7 +27,8 @@ const show = async (req: Request, res: Response) => {
 };
 
 const store = async (req: Request, res: Response) => {
-  const note = await createNote(req.body);
+  const { userId } = req.params;
+  const note = await createNote(req.body, userId);
 
   if (!note) {
     return res.status(400).json({ message: 'Error creating note' });

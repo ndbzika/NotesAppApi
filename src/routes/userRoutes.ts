@@ -14,7 +14,6 @@ router.post('/signup', store);
 
 router.use(loguinRequired);
 
-router.get('/', index);
 router.get('/:id', show);
 router.put('/:id', update);
 router.delete('/:id', destroy);

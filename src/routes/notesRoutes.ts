@@ -14,7 +14,7 @@ router.use(loguinRequired);
 
 router.get('/:userId', index);
 router.get('/:userId/:noteId', show);
-router.post('/', store);
+router.post('/:userId', store);
 router.put('/:userId/:noteId', update);
 router.delete('/:userId/:noteId', destroy);
 

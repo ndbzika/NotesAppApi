@@ -35,13 +35,14 @@ const findNotesByUserId = async (userId: string): Promise<GetNotesDTO[]> => {
 
 const createNote = async (
   note: GetNotesDTO,
+  userId: string,
 ): Promise<CreateNotesDTO | null> => {
   try {
     return await prisma.notes.create({
       data: {
         title: note.title,
         content: note.content,
-        userId: note.userId,
+        userId: userId,
       },
     });
   } catch (e) {
